@@ -8,11 +8,11 @@ def post_message(token, channel, text):
                   )
 
 
-def lambda_handler():
+def lambda_handler(event, context):
     full_msg = "test 입니다"
     slack_token = "xoxb-1234"
     post_message(slack_token, "#bot-test", full_msg)
 
 
-if __name__ == '__main__':
-    lambda_handler()
+# if __name__ == '__main__':
+#     lambda_handler()
