@@ -1,5 +1,6 @@
-from lib import requests
 import os
+
+import requests
 
 channel = "#bot-test"
 messages = dict(
