@@ -2,7 +2,7 @@ import os
 
 import requests
 
-channel = "#bot-test"
+channel = "#general"
 messages = dict(
     A1="출근하시면 스레드 댓글로 간단하게 남겨주세요. ex) 출근",
     A2="출근시 Daily Goal을 간단하게 남겨주세요.",
