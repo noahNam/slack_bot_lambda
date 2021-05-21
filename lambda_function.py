@@ -1,4 +1,13 @@
 from lib import requests
+import os
+
+channel = "#bot-test"
+messages = dict(
+    A1="출근하시면 스레드 댓글로 간단하게 남겨주세요. ex)출근",
+    A2="출근시 Daily Goal을 간단하게 남겨주세요.",
+    A3="퇴근하시면 스레드 댓글로 간단하게 남겨주세요. ex)퇴근",
+    A4="퇴근시 Daily Goal 달성율을 간단하게 남겨주세요."
+)
 
 
 def post_message(token, channel, text):
@@ -9,10 +18,8 @@ def post_message(token, channel, text):
 
 
 def lambda_handler(event, context):
-    full_msg = "test 입니다"
-    slack_token = "xoxb-1234"
-    post_message(slack_token, "#bot-test", full_msg)
+    bot_type = event.get("bot_type")
+    message = messages.get(bot_type)
+    slack_token = os.environ.get("SLACK_TOKEN")
 
-
-# if __name__ == '__main__':
-#     lambda_handler()
+    post_message(slack_token, channel, message)
