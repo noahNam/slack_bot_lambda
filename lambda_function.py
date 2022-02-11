@@ -4,7 +4,7 @@ import requests
 
 channel = "#general"
 messages = dict(
-    A1="출근하시면 스레드 댓글로 간단하게 남겨주세요. ex) 출근",
+    A1="재택 근무자는 출근하시면 스레드 댓글로 간단하게 남겨주세요. ex) 출근",
     A2="출근시 Daily Goal을 간단하게 남겨주세요.",
     A3="퇴근하시면 스레드 댓글로 간단하게 남겨주세요. ex) 퇴근",
     A4="퇴근시 Daily Goal 달성율을 간단하게 남겨주세요."
