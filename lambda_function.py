@@ -2,12 +2,12 @@ import os
 
 import requests
 
-channel = "#general"
 messages = dict(
     A1="재택 근무자는 출근하시면 스레드 댓글로 간단하게 남겨주세요. ex) 출근",
     A2="출근시 Daily Goal을 간단하게 남겨주세요.",
     A3="퇴근하시면 스레드 댓글로 간단하게 남겨주세요. ex) 퇴근",
-    A4="퇴근시 Daily Goal 달성율을 간단하게 남겨주세요."
+    A4="퇴근시 Daily Goal 달성율을 간단하게 남겨주세요.",
+    A5="금일 데일리 작업 완료되신 분은 스레드 댓글 남겨주세요."
 )
 
 
@@ -22,5 +22,6 @@ def lambda_handler(event, context):
     bot_type = event.get("bot_type")
     message = messages.get(bot_type)
     slack_token = os.environ.get("SLACK_TOKEN")
+    channel = "#daily-progress-check" if bot_type == "A5" else "#general"
 
     post_message(slack_token, channel, message)
